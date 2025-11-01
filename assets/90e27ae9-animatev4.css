@@ -4312,3 +4312,45 @@
   animation-name: runningLeft;
   animation-timing-function: ease;
 }
+
+/* Apply to both desktop and mobile IDs if you have both */
+:is(#w-zalo, #wi-zalo) {
+  /* match #w-mvphwpe0 */
+  width: 377px !important;
+  height: 39px !important;
+  min-width: 377px !important;
+  max-width: 377px !important;
+  min-height: 39px !important;
+  max-height: 39px !important;
+
+  /* absolute-safe: anchor left/top so it's not shrink-to-fit */
+  left: 0 !important;
+  right: auto !important;
+  /* keep whatever top you set in CSS/JS */
+  box-sizing: border-box;
+}
+
+:is(#w-zalo, #wi-zalo) .input-css {
+  width: 100% !important;
+  height: 100% !important;
+  border: 2px double rgba(57,71,58,1);
+  border-radius: 0;
+  color: rgba(0,0,0,0.54);
+  background: transparent;
+}
+
+:is(#w-zalo, #wi-zalo) input {
+  width: 100% !important;
+  height: 100% !important;
+  padding: 0 10px;
+  background: #fff;
+  color: rgba(0,0,0,0.54);
+  border: 0;
+  border-radius: 0;
+  appearance: none; -webkit-appearance: none; -moz-appearance: none;
+  font-size: 16px; /* avoids iOS zoom */
+  line-height: 1.25;
+}
+
+/* ensure the container it sits in can't squeeze it */
+.container-holding-zalo { min-width: 377px; }
