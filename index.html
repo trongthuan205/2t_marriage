@@ -85,6 +85,19 @@
     #w-nceq05i1 .image-background.lazy {
       filter: drop-shadow(0 0 0 rgba(0,0,0,.35)) drop-shadow(0 2px 6px rgba(0,0,0,.18));
     }
+      /* stronger selector to survive bundling order */
+    #w-nceq05i1 .image-block-css .image-background.lazy {
+      /* tiny blur so minifiers keep it; visually still a “stroke” */
+      -webkit-filter: drop-shadow(0 0 0.8px rgba(0,0,0,.35))
+                      drop-shadow(0 2px 6px rgba(0,0,0,.18));
+      filter:         drop-shadow(0 0 0.8px rgba(0,0,0,.35))
+                      drop-shadow(0 2px 6px rgba(0,0,0,.18));
+
+      /* helpful stability tweaks */
+      will-change: filter;
+      backface-visibility: hidden;
+    }
+
     #w-9wph1tgc .image-background{width:305.50505050505046px;height:305.50505050505046px;top:-44.379421221864966px;left:-21.252525252525256px;background:center center/ cover no-repeat scroll content-box  border-box url("./assets/imgs/t12.png");--type:0;}
     #w-9wph1tgc .image-background-compare{background: undefined;clip: rect(0, 131.5px, 206px, 0);--type:0;}
     #w-6ztron8b{top:35.5px;left:30px;width:230px;height:auto;}
